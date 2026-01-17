@@ -23,12 +23,14 @@ def hello_world():
 @app.route("/<int:user_input>")
 def evaluate_guess(user_input):
     if user_input == RANDOM_NUMBER:
-        return "<image src=https://media.giphy.com/media/4T7e4DmcrP9du/giphy.gif>"
+        return ("<h1>Correct</h1>\n "
+                "<image src=https://media.giphy.com/media/4T7e4DmcrP9du/giphy.gif>")
     elif user_input < RANDOM_NUMBER:
-        return "<image src=https://media.giphy.com/media/jD4DwBtqPXRXa/giphy.gif>"
+        return ("<h1>Too low</h1>\n "
+                "<image src=https://media.giphy.com/media/jD4DwBtqPXRXa/giphy.gif>")
     elif user_input > RANDOM_NUMBER:
-        return "<image src=https://media.giphy.com/media/3o6ZtaO9BZHcOjmErm/giphy.gif>"
-
+        return ("<h1>Too high</h1>\n "
+                "<image src=https://media.giphy.com/media/3o6ZtaO9BZHcOjmErm/giphy.gif>")
 
 @app.route("/bye")
 def buy_route():
